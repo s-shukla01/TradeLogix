@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
+import "./tradelogix.css";
+import "./dashboard-premium.css";
 import Home from "./components/Home";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

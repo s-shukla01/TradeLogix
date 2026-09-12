@@ -1,0 +1,530 @@
+/* =========================================================
+   TRADELOGIX NAVBAR + FOOTER
+   ========================================================= */
+
+.tl-navbar,
+.tl-navbar *,
+.tl-footer,
+.tl-footer * {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.tl-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: 72px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid #e8ebef;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.tl-navbar-container {
+  width: min(1160px, calc(100% - 48px));
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.tl-navbar-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #172033;
+
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+.tl-navbar-logo-mark {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  background: #387ed1;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tl-navbar-logo-text {
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: -0.5px;
+}
+
+/* =========================================================
+   NAV LINKS
+   ========================================================= */
+
+.tl-navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.tl-navbar-links li {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.tl-navbar-links a {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 26px 0;
+
+  color: #475467;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    color 160ms ease;
+}
+
+.tl-navbar-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 17px;
+
+  height: 2px;
+
+  background: #387ed1;
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 160ms ease;
+}
+
+.tl-navbar-links a:hover {
+  color: #387ed1;
+}
+
+.tl-navbar-links a:hover::after {
+  transform: scaleX(1);
+}
+
+/* =========================================================
+   NAV ACTIONS
+   ========================================================= */
+
+.tl-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tl-navbar-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+  padding: 0 16px;
+
+  color: #344054;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: background 160ms ease;
+}
+
+.tl-navbar-login:hover {
+  background: #f5f7fa;
+}
+
+.tl-navbar-signup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+  padding: 0 18px;
+
+  border-radius: 6px;
+
+  background: #387ed1;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.tl-navbar-signup:hover {
+  background: #245fa8;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.tl-navbar-menu {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tl-navbar-menu span {
+  width: 18px;
+  height: 2px;
+
+  background: #344054;
+
+  border-radius: 2px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.tl-footer {
+  background: #fbfbfc;
+
+  border-top: 1px solid #e7e9ed;
+
+  color: #667085;
+}
+
+.tl-footer-container {
+  width: min(1160px, calc(100% - 48px));
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   FOOTER MAIN
+   ========================================================= */
+
+.tl-footer-main {
+  display: grid;
+
+  grid-template-columns: 1.45fr repeat(4, 1fr);
+
+  gap: 45px;
+
+  padding: 70px 0 55px;
+}
+
+/* =========================================================
+   FOOTER BRAND
+   ========================================================= */
+
+.tl-footer-brand {
+  padding-right: 20px;
+}
+
+.tl-footer-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  color: #172033;
+
+  text-decoration: none;
+}
+
+.tl-footer-brand-mark {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  background: #387ed1;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tl-footer-brand-name {
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.tl-footer-description {
+  max-width: 270px;
+
+  margin: 0;
+
+  color: #7a8493;
+
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   FOOTER COLUMNS
+   ========================================================= */
+
+.tl-footer-column h4 {
+  margin: 2px 0 20px;
+
+  color: #344054;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+}
+
+.tl-footer-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.tl-footer-column li {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.tl-footer-column a {
+  color: #667085;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  transition: color 150ms ease;
+}
+
+.tl-footer-column a:hover {
+  color: #387ed1;
+}
+
+/* =========================================================
+   FOOTER DIVIDER
+   ========================================================= */
+
+.tl-footer-divider {
+  width: 100%;
+  height: 1px;
+
+  background: #e7e9ed;
+}
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
+
+.tl-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  padding: 22px 0 25px;
+}
+
+.tl-footer-copyright {
+  margin: 0;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.tl-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.tl-footer-socials li {
+  list-style: none;
+}
+
+.tl-footer-socials a {
+  color: #7a8493;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  transition: color 150ms ease;
+}
+
+.tl-footer-socials a:hover {
+  color: #387ed1;
+}
+
+/* =========================================================
+   LEGAL
+   ========================================================= */
+
+.tl-footer-legal {
+  padding: 0 0 28px;
+
+  color: #98a2b3;
+
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+.tl-footer-legal p {
+  margin: 0 0 7px;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .tl-navbar-container {
+    width: calc(100% - 32px);
+  }
+
+  .tl-navbar-links {
+    gap: 20px;
+  }
+
+  .tl-navbar-actions {
+    display: none;
+  }
+
+  .tl-footer-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tl-footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .tl-navbar {
+    height: 64px;
+  }
+
+  .tl-navbar-links {
+    display: none;
+  }
+
+  .tl-navbar-menu {
+    display: flex;
+  }
+
+  .tl-footer-container {
+    width: calc(100% - 32px);
+  }
+
+  .tl-footer-main {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 35px 25px;
+
+    padding: 50px 0 40px;
+  }
+
+  .tl-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .tl-footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .tl-footer-brand {
+    grid-column: auto;
+  }
+
+  .tl-footer-column h4 {
+    margin-bottom: 14px;
+  }
+}

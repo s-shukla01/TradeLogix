@@ -1,40 +1,741 @@
+/* =========================================================
+   TradeLogix Landing Page
+   Premium Zerodha-inspired Design System
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* -------------------------
+   RESET
+------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  background: #ffffff;
+  color: #424242;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.nav-link{
-  margin-left: 40px;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-#supportHero{
-  background-color: rgb(56, 126, 209);
-  color: white;
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
 }
 
-#supportHero a{
-  color: white;
-}
+/* =========================================================
+   NAVBAR
+   ========================================================= */
 
-#supportWrapper{
-  display: flex;
-  justify-content: space-between;
-  margin: 0 150px;
-}
-
-#supportHero input{
-  padding: 20px 50px;
+.navbar {
   width: 100%;
+  height: 70px;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+}
+
+.navbar-container {
+  width: 1100px;
+  max-width: calc(100% - 48px);
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo,
+.logo {
+  width: 130px;
+  height: auto;
+  object-fit: contain;
+}
+
+.navbar-links,
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.navbar-links li,
+.nav-links li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a,
+.nav-links a {
+  color: #424242;
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover,
+.nav-links a:hover {
+  color: #387ed1;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+   IMPORTANT:
+   Don't force generic .container into flex.
+   ========================================================= */
+
+.container {
+  width: 1100px;
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  width: 100%;
+  padding: 80px 0 90px;
+  background: #ffffff;
+}
+
+.hero .container {
+  text-align: center;
+}
+
+.hero img {
+  width: 850px;
+  max-width: 100%;
+  margin: 0 auto 55px;
+}
+
+.hero h1 {
+  color: #424242;
+  font-size: 44px;
+  line-height: 1.25;
+  font-weight: 600;
+
+  margin: 0 0 18px;
+}
+
+.hero p {
+  color: #666666;
+  font-size: 18px;
+  line-height: 1.7;
+
+  margin: 0 auto 28px;
+  max-width: 720px;
+}
+
+.hero .btn,
+.hero button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 150px;
+  height: 46px;
+
+  padding: 0 25px;
+
+  background: #387ed1;
+  color: #ffffff;
+
+  border: 1px solid #387ed1;
+  border-radius: 4px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hero .btn:hover,
+.hero button:hover {
+  background: #2f6fb8;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   HOME SECTIONS
+   ========================================================= */
+
+.home-section {
+  width: 100%;
+  padding: 90px 0;
+}
+
+.home-section:nth-child(even) {
+  background: #fafafa;
+}
+
+/* =========================================================
+   ROW
+   ========================================================= */
+
+/*
+   Existing components use .row.
+   Keep it as a proper layout container instead of
+   letting children collapse into one line.
+*/
+
+.row {
+  width: 100%;
+  margin: 0;
+}
+
+/*
+   When .row is specifically being used as a two-column
+   content section.
+*/
+
+.row.two-column,
+.row.content-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+/* =========================================================
+   COLUMNS
+   ========================================================= */
+
+.col {
+  min-width: 0;
+}
+
+/* =========================================================
+   AWARDS
+   ========================================================= */
+
+.awards {
+  padding: 85px 0;
+  background: #ffffff;
+}
+
+.awards h1,
+.awards h2,
+.awards h3 {
+  color: #424242;
+  font-weight: 600;
+}
+
+.awards h2 {
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+.awards p {
+  color: #666666;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.awards img {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.stats h2 {
+  font-size: 30px;
+  line-height: 1.3;
+  color: #424242;
+  margin-bottom: 20px;
+}
+
+.stats h3 {
+  font-size: 21px;
+  color: #424242;
+  margin-bottom: 12px;
+}
+
+.stats p {
+  color: #666666;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.stats ul {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.stats li {
+  margin-bottom: 10px;
+  color: #555555;
+}
+
+/* =========================================================
+   EDUCATION
+   ========================================================= */
+
+.education {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.education h2 {
+  color: #424242;
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+.education p {
+  color: #666666;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.education img {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   PRICING
+   ========================================================= */
+
+.pricing {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.pricing h1 {
+  color: #424242;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.pricing h2 {
+  color: #424242;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.pricing h3 {
+  color: #424242;
   font-size: 20px;
-  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.pricing p {
+  color: #666666;
+  line-height: 1.8;
+}
+
+/* Pricing cards */
+
+.pricing-card {
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 6px;
+  padding: 30px;
+
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+/* =========================================================
+   PRODUCTS
+   ========================================================= */
+
+.products {
+  width: 100%;
+  background: #ffffff;
+}
+
+.products h1 {
+  color: #424242;
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.products h2 {
+  color: #424242;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.products p {
+  color: #666666;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.products ul {
+  padding-left: 20px;
+  margin: 18px 0;
+}
+
+.products li {
+  margin-bottom: 9px;
+  color: #555555;
+}
+
+/* =========================================================
+   PRODUCT TWO COLUMN
+   ========================================================= */
+
+.product-row {
+  width: 1100px;
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
+
+  padding: 90px 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.product-row img {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   SIGNUP
+   ========================================================= */
+
+.signup,
+.signup-page {
+  min-height: calc(100vh - 70px);
+
+  padding: 80px 20px;
+
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(56, 126, 209, 0.12),
+      transparent 30%
+    ),
+    #f9fafb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-card {
+  width: 440px;
+  max-width: 100%;
+
+  padding: 40px;
+
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+}
+
+.signup-card h1 {
+  color: #424242;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.signup-card p {
+  color: #777777;
+  margin-bottom: 28px;
+}
+
+.signup-card input {
+  width: 100%;
+  height: 46px;
+
+  padding: 0 13px;
+  margin-bottom: 15px;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+
+  outline: none;
+}
+
+.signup-card input:focus {
+  border-color: #387ed1;
+  box-shadow: 0 0 0 3px rgba(56, 126, 209, 0.1);
+}
+
+.signup-card .btn {
+  width: 100%;
+}
+
+/* =========================================================
+   SUPPORT
+   ========================================================= */
+
+.support {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.support-hero {
+  padding: 75px 0;
+
+  background: #387ed1;
+  color: #ffffff;
+}
+
+.support-hero h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.support-hero p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.support-search {
+  width: 100%;
+  max-width: 700px;
+
+  height: 55px;
+  margin-top: 28px;
+  padding: 0 18px;
+
   border: none;
+  border-radius: 5px;
+
+  outline: none;
+  font-size: 16px;
+}
+
+/* =========================================================
+   COMMON BUTTON
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 24px;
+
+  border-radius: 4px;
+  border: none;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.btn-blue {
+  background: #387ed1;
+  color: #ffffff;
+}
+
+.btn-blue:hover {
+  background: #2f6fb8;
+}
+
+.btn-green {
+  background: #22a06b;
+  color: #ffffff;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  width: 100%;
+  padding: 65px 0 30px;
+
+  background: #fafafa;
+  border-top: 1px solid #eeeeee;
+}
+
+.footer-container {
+  width: 1100px;
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 50px;
+}
+
+.footer h3 {
+  color: #424242;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+.footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: #666666;
+  font-size: 14px;
+}
+
+.footer a:hover {
+  color: #387ed1;
+}
+
+.footer-bottom {
+  margin-top: 45px;
+  padding-top: 25px;
+  border-top: 1px solid #eeeeee;
+
+  color: #999999;
+  font-size: 13px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar-container {
+    max-width: calc(100% - 32px);
+  }
+
+  .navbar-links,
+  .nav-links {
+    gap: 18px;
+  }
+
+  .product-row {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .row.two-column,
+  .row.content-row {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .container,
+  .product-row,
+  .footer-container {
+    max-width: calc(100% - 30px);
+  }
+
+  .navbar {
+    height: 64px;
+  }
+
+  .navbar-links,
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: 55px 0 65px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .home-section,
+  .awards,
+  .stats,
+  .education,
+  .pricing {
+    padding: 65px 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .signup-card {
+    padding: 28px 22px;
+  }
 }

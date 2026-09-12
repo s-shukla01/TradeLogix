@@ -1,0 +1,2131 @@
+/* =========================================================
+   TRADELOGIX DESIGN SYSTEM
+   Trade Smart. Log Success.
+   ========================================================= */
+
+/* =========================================================
+   1. DESIGN TOKENS
+   ========================================================= */
+
+:root {
+  /* ---------- Brand ---------- */
+  --tl-primary: #1261d6;
+  --tl-primary-hover: #0d55c2;
+  --tl-primary-dark: #0b3d91;
+  --tl-primary-soft: #eaf2ff;
+
+  --tl-navy: #071d3b;
+  --tl-navy-light: #0d2d55;
+
+  --tl-cyan: #16a3e8;
+  --tl-cyan-soft: #e8f7fd;
+
+  /* ---------- Trading Colors ---------- */
+  --tl-profit: #16a66a;
+  --tl-profit-dark: #0f8755;
+  --tl-profit-soft: #eaf8f2;
+
+  --tl-loss: #e5484d;
+  --tl-loss-dark: #c7353a;
+  --tl-loss-soft: #fdf0f0;
+
+  --tl-warning: #f59e0b;
+  --tl-warning-soft: #fff7e6;
+
+  /* ---------- Background ---------- */
+  --tl-bg: #f5f7fb;
+  --tl-bg-secondary: #eef2f7;
+  --tl-surface: #ffffff;
+  --tl-surface-hover: #f8faff;
+
+  /* ---------- Typography ---------- */
+  --tl-text: #172033;
+  --tl-text-secondary: #4b5870;
+  --tl-text-muted: #718096;
+  --tl-text-light: #94a3b8;
+  --tl-text-white: #ffffff;
+
+  /* ---------- Borders ---------- */
+  --tl-border: #e4e9f1;
+  --tl-border-light: #edf1f6;
+  --tl-border-dark: #d5dce7;
+
+  /* ---------- Shadows ---------- */
+  --tl-shadow-xs:
+    0 1px 3px rgba(15, 23, 42, 0.04);
+
+  --tl-shadow-sm:
+    0 4px 12px rgba(15, 23, 42, 0.05);
+
+  --tl-shadow-md:
+    0 8px 25px rgba(15, 23, 42, 0.07);
+
+  --tl-shadow-lg:
+    0 16px 40px rgba(15, 23, 42, 0.10);
+
+  --tl-shadow-blue:
+    0 8px 25px rgba(18, 97, 214, 0.18);
+
+  /* ---------- Radius ---------- */
+  --tl-radius-xs: 6px;
+  --tl-radius-sm: 8px;
+  --tl-radius-md: 12px;
+  --tl-radius-lg: 16px;
+  --tl-radius-xl: 20px;
+  --tl-radius-2xl: 24px;
+
+  /* ---------- Spacing ---------- */
+  --tl-space-1: 4px;
+  --tl-space-2: 8px;
+  --tl-space-3: 12px;
+  --tl-space-4: 16px;
+  --tl-space-5: 20px;
+  --tl-space-6: 24px;
+  --tl-space-8: 32px;
+  --tl-space-10: 40px;
+  --tl-space-12: 48px;
+  --tl-space-16: 64px;
+
+  /* ---------- Layout ---------- */
+  --tl-sidebar-width: 248px;
+  --tl-topbar-height: 68px;
+  --tl-content-max-width: 1600px;
+
+  /* ---------- Transitions ---------- */
+  --tl-transition-fast: 150ms ease;
+  --tl-transition: 220ms ease;
+  --tl-transition-slow: 320ms ease;
+
+  /* ---------- Z Index ---------- */
+  --tl-z-base: 1;
+  --tl-z-dropdown: 100;
+  --tl-z-sticky: 200;
+  --tl-z-sidebar: 300;
+  --tl-z-modal: 1000;
+  --tl-z-toast: 1100;
+}
+
+
+/* =========================================================
+   2. GLOBAL RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: var(--tl-bg);
+  color: var(--tl-text);
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   3. TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--tl-text);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: -0.7px;
+}
+
+h2 {
+  font-size: 26px;
+  letter-spacing: -0.4px;
+}
+
+h3 {
+  font-size: 20px;
+  letter-spacing: -0.2px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+p {
+  margin: 0;
+  color: var(--tl-text-secondary);
+}
+
+small {
+  font-size: 12px;
+  color: var(--tl-text-muted);
+}
+
+
+/* =========================================================
+   4. TEXT UTILITIES
+   ========================================================= */
+
+.tl-text-primary {
+  color: var(--tl-primary) !important;
+}
+
+.tl-text-profit {
+  color: var(--tl-profit) !important;
+}
+
+.tl-text-loss {
+  color: var(--tl-loss) !important;
+}
+
+.tl-text-muted {
+  color: var(--tl-text-muted) !important;
+}
+
+.tl-text-secondary {
+  color: var(--tl-text-secondary) !important;
+}
+
+.tl-font-medium {
+  font-weight: 500;
+}
+
+.tl-font-semibold {
+  font-weight: 600;
+}
+
+.tl-font-bold {
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   5. GLOBAL SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd4e1;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aeb9c9;
+}
+
+
+/* =========================================================
+   6. SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(18, 97, 214, 0.15);
+  color: var(--tl-navy);
+}
+
+
+/* =========================================================
+   7. FOCUS STATES
+   ========================================================= */
+
+:focus-visible {
+  outline: 3px solid rgba(18, 97, 214, 0.18);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   8. GLOBAL BUTTON SYSTEM
+   ========================================================= */
+
+.tl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 40px;
+  padding: 0 16px;
+
+  border-radius: var(--tl-radius-sm);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background var(--tl-transition),
+    color var(--tl-transition),
+    border-color var(--tl-transition),
+    box-shadow var(--tl-transition),
+    transform var(--tl-transition);
+}
+
+.tl-btn:hover {
+  transform: translateY(-1px);
+}
+
+.tl-btn:active {
+  transform: translateY(0);
+}
+
+
+/* Primary */
+
+.tl-btn-primary {
+  color: white;
+  background: var(--tl-primary);
+  box-shadow: 0 4px 12px rgba(18, 97, 214, 0.18);
+}
+
+.tl-btn-primary:hover {
+  background: var(--tl-primary-hover);
+  box-shadow: var(--tl-shadow-blue);
+}
+
+
+/* Secondary */
+
+.tl-btn-secondary {
+  color: var(--tl-primary);
+  background: var(--tl-primary-soft);
+}
+
+.tl-btn-secondary:hover {
+  background: #dce9ff;
+}
+
+
+/* Outline */
+
+.tl-btn-outline {
+  color: var(--tl-text);
+  background: var(--tl-surface);
+  border: 1px solid var(--tl-border);
+}
+
+.tl-btn-outline:hover {
+  border-color: var(--tl-primary);
+  color: var(--tl-primary);
+}
+
+
+/* Buy */
+
+.tl-btn-buy {
+  color: #ffffff;
+  background: var(--tl-profit);
+}
+
+.tl-btn-buy:hover {
+  background: var(--tl-profit-dark);
+}
+
+
+/* Sell */
+
+.tl-btn-sell {
+  color: #ffffff;
+  background: var(--tl-loss);
+}
+
+.tl-btn-sell:hover {
+  background: var(--tl-loss-dark);
+}
+
+
+/* Ghost */
+
+.tl-btn-ghost {
+  color: var(--tl-text-secondary);
+  background: transparent;
+}
+
+.tl-btn-ghost:hover {
+  color: var(--tl-primary);
+  background: var(--tl-primary-soft);
+}
+
+
+/* =========================================================
+   9. CARD SYSTEM
+   ========================================================= */
+
+.tl-card {
+  background: var(--tl-surface);
+  border: 1px solid var(--tl-border-light);
+  border-radius: var(--tl-radius-md);
+  box-shadow: var(--tl-shadow-xs);
+
+  transition:
+    box-shadow var(--tl-transition),
+    border-color var(--tl-transition),
+    transform var(--tl-transition);
+}
+
+.tl-card:hover {
+  border-color: var(--tl-border);
+  box-shadow: var(--tl-shadow-sm);
+}
+
+.tl-card-padding {
+  padding: var(--tl-space-6);
+}
+
+
+/* =========================================================
+   10. STATUS BADGES
+   ========================================================= */
+
+.tl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  min-height: 26px;
+  padding: 0 9px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.tl-badge-profit {
+  color: var(--tl-profit-dark);
+  background: var(--tl-profit-soft);
+}
+
+.tl-badge-loss {
+  color: var(--tl-loss-dark);
+  background: var(--tl-loss-soft);
+}
+
+.tl-badge-warning {
+  color: #a16207;
+  background: var(--tl-warning-soft);
+}
+
+.tl-badge-primary {
+  color: var(--tl-primary-dark);
+  background: var(--tl-primary-soft);
+}
+
+.tl-badge-neutral {
+  color: var(--tl-text-secondary);
+  background: var(--tl-bg-secondary);
+}
+
+
+/* =========================================================
+   11. INPUT SYSTEM
+   ========================================================= */
+
+.tl-input,
+.tl-select,
+.tl-textarea {
+  width: 100%;
+
+  border: 1px solid var(--tl-border);
+  border-radius: var(--tl-radius-sm);
+
+  background: var(--tl-surface);
+  color: var(--tl-text);
+
+  transition:
+    border-color var(--tl-transition),
+    box-shadow var(--tl-transition);
+}
+
+.tl-input,
+.tl-select {
+  height: 42px;
+  padding: 0 13px;
+}
+
+.tl-textarea {
+  min-height: 100px;
+  padding: 12px 13px;
+  resize: vertical;
+}
+
+.tl-input::placeholder,
+.tl-textarea::placeholder {
+  color: var(--tl-text-light);
+}
+
+.tl-input:hover,
+.tl-select:hover,
+.tl-textarea:hover {
+  border-color: var(--tl-border-dark);
+}
+
+.tl-input:focus,
+.tl-select:focus,
+.tl-textarea:focus {
+  outline: none;
+  border-color: var(--tl-primary);
+  box-shadow: 0 0 0 3px rgba(18, 97, 214, 0.10);
+}
+
+
+/* =========================================================
+   12. SEARCH BOX
+   ========================================================= */
+
+.tl-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tl-search input {
+  width: 100%;
+  height: 42px;
+
+  padding: 0 14px 0 42px;
+
+  border: 1px solid var(--tl-border);
+  border-radius: var(--tl-radius-sm);
+
+  background: var(--tl-surface);
+
+  color: var(--tl-text);
+
+  transition:
+    border-color var(--tl-transition),
+    box-shadow var(--tl-transition);
+}
+
+.tl-search input::placeholder {
+  color: var(--tl-text-light);
+}
+
+.tl-search input:focus {
+  outline: none;
+  border-color: var(--tl-primary);
+  box-shadow: 0 0 0 3px rgba(18, 97, 214, 0.08);
+}
+
+.tl-search-icon {
+  position: absolute;
+  left: 14px;
+
+  color: var(--tl-text-muted);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   13. DIVIDER
+   ========================================================= */
+
+.tl-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--tl-border-light);
+}
+
+
+/* =========================================================
+   14. MARKET MOVEMENT
+   ========================================================= */
+
+.tl-positive {
+  color: var(--tl-profit);
+  font-weight: 600;
+}
+
+.tl-negative {
+  color: var(--tl-loss);
+  font-weight: 600;
+}
+
+.tl-neutral {
+  color: var(--tl-text-muted);
+}
+
+
+/* =========================================================
+   15. MARKET DOT
+   ========================================================= */
+
+.tl-market-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.tl-market-dot-green {
+  background: var(--tl-profit);
+  box-shadow: 0 0 0 4px rgba(22, 166, 106, 0.10);
+}
+
+.tl-market-dot-red {
+  background: var(--tl-loss);
+  box-shadow: 0 0 0 4px rgba(229, 72, 77, 0.10);
+}
+
+
+/* =========================================================
+   16. TABLE SYSTEM
+   ========================================================= */
+
+.tl-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+
+  border: 1px solid var(--tl-border-light);
+  border-radius: var(--tl-radius-md);
+
+  background: var(--tl-surface);
+}
+
+.tl-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  font-size: 13px;
+}
+
+.tl-table th {
+  padding: 13px 16px;
+
+  background: #f8fafc;
+
+  color: var(--tl-text-muted);
+
+  border-bottom: 1px solid var(--tl-border);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tl-table td {
+  padding: 15px 16px;
+
+  color: var(--tl-text-secondary);
+
+  border-bottom: 1px solid var(--tl-border-light);
+
+  white-space: nowrap;
+}
+
+.tl-table tbody tr {
+  transition: background var(--tl-transition-fast);
+}
+
+.tl-table tbody tr:hover {
+  background: var(--tl-surface-hover);
+}
+
+.tl-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+
+/* =========================================================
+   17. EMPTY STATE
+   ========================================================= */
+
+.tl-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 220px;
+
+  padding: 32px;
+
+  text-align: center;
+}
+
+.tl-empty-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 50%;
+
+  background: var(--tl-primary-soft);
+  color: var(--tl-primary);
+
+  font-size: 22px;
+}
+
+.tl-empty-state h3 {
+  margin-bottom: 6px;
+}
+
+.tl-empty-state p {
+  max-width: 360px;
+  margin-bottom: 18px;
+
+  color: var(--tl-text-muted);
+}
+
+
+/* =========================================================
+   18. LOADING SHIMMER
+   ========================================================= */
+
+.tl-skeleton {
+  position: relative;
+  overflow: hidden;
+
+  background: #edf1f6;
+  border-radius: var(--tl-radius-sm);
+}
+
+.tl-skeleton::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  transform: translateX(-100%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.65),
+      transparent
+    );
+
+  animation: tl-shimmer 1.5s infinite;
+}
+
+@keyframes tl-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+/* =========================================================
+   19. FADE / ENTRY ANIMATION
+   ========================================================= */
+
+.tl-fade-in {
+  animation: tlFadeIn 0.35s ease both;
+}
+
+@keyframes tlFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   20. SIMPLE HOVER LIFT
+   ========================================================= */
+
+.tl-hover-lift {
+  transition:
+    transform var(--tl-transition),
+    box-shadow var(--tl-transition);
+}
+
+.tl-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--tl-shadow-md);
+}
+
+
+/* =========================================================
+   21. NUMBER / FINANCIAL DISPLAY
+   ========================================================= */
+
+.tl-money {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.2px;
+}
+
+.tl-large-number {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================================
+   22. DASHBOARD SECTION HEADER
+   ========================================================= */
+
+.tl-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.tl-section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tl-section-title h2,
+.tl-section-title h3 {
+  margin: 0;
+}
+
+.tl-section-title p {
+  font-size: 12px;
+  color: var(--tl-text-muted);
+}
+
+
+/* =========================================================
+   23. RESPONSIVE HELPERS
+   ========================================================= */
+
+.tl-hide-mobile {
+  display: block;
+}
+
+.tl-show-mobile {
+  display: none;
+}
+
+
+/* =========================================================
+   24. MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  :root {
+    --tl-topbar-height: 60px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  .tl-card-padding {
+    padding: 18px;
+  }
+
+  .tl-hide-mobile {
+    display: none !important;
+  }
+
+  .tl-show-mobile {
+    display: block;
+  }
+}
+
+
+/* =========================================================
+   25. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  body {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 17px;
+  }
+
+  .tl-section-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tl-btn {
+    min-height: 38px;
+    padding: 0 13px;
+  }
+
+  .tl-table th,
+  .tl-table td {
+    padding: 12px;
+  }
+
+  .tl-large-number {
+    font-size: 24px;
+  }
+}
+
+
+/* =========================================================
+   26. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   TRADELOGIX PHASE 2
+   SIDEBAR + TOPBAR
+   ========================================================= */
+
+
+/* =========================================================
+   1. DASHBOARD BASE LAYOUT
+   ========================================================= */
+
+.dashboard-container {
+  min-height: 100vh;
+  width: 100%;
+
+  background: var(--tl-bg);
+  color: var(--tl-text);
+}
+
+
+/* =========================================================
+   2. TRADELOGIX SIDEBAR
+   ========================================================= */
+
+.tl-sidebar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: var(--tl-sidebar-width);
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--tl-navy) 0%,
+      #092747 100%
+    );
+
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: #ffffff;
+
+  z-index: var(--tl-z-sidebar);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  box-shadow:
+    6px 0 25px rgba(7, 29, 59, 0.08);
+}
+
+
+/* =========================================================
+   3. SIDEBAR BRAND
+   ========================================================= */
+
+.tl-sidebar-brand {
+  min-height: 92px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 22px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.tl-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  width: 100%;
+
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+.tl-brand-mark {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1683ff,
+      #1261d6
+    );
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+
+  box-shadow:
+    0 7px 18px rgba(22, 131, 255, 0.25);
+}
+
+.tl-brand-text {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1px;
+}
+
+.tl-brand-name {
+  font-size: 17px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
+
+  color: #ffffff;
+}
+
+.tl-brand-tagline {
+  font-size: 8px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.35px;
+
+  color: rgba(255, 255, 255, 0.52);
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   4. SIDEBAR NAVIGATION
+   ========================================================= */
+
+.tl-sidebar-nav {
+  flex: 1;
+
+  padding: 28px 13px 20px;
+}
+
+.tl-nav-section {
+  margin-bottom: 30px;
+}
+
+.tl-nav-section-title {
+  display: block;
+
+  padding: 0 13px 10px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+}
+
+.tl-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+
+/* =========================================================
+   5. NAV ITEM
+   ========================================================= */
+
+.tl-nav-item {
+  position: relative;
+
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 14px;
+
+  border-radius: 9px;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  text-decoration: none;
+
+  transition:
+    background var(--tl-transition),
+    color var(--tl-transition),
+    transform var(--tl-transition);
+}
+
+.tl-nav-item:hover {
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.065);
+
+  transform: translateX(2px);
+}
+
+.tl-nav-item.active {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(22, 131, 255, 0.20),
+      rgba(22, 131, 255, 0.07)
+    );
+
+  box-shadow:
+    inset 0 0 0 1px rgba(22, 131, 255, 0.08);
+}
+
+
+/* =========================================================
+   6. NAV ICON
+   ========================================================= */
+
+.tl-nav-icon {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 6px;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 16px;
+
+  transition:
+    color var(--tl-transition),
+    background var(--tl-transition);
+}
+
+.tl-nav-item:hover .tl-nav-icon {
+  color: #ffffff;
+}
+
+.tl-nav-item.active .tl-nav-icon {
+  color: #ffffff;
+
+  background:
+    rgba(22, 131, 255, 0.20);
+}
+
+
+/* =========================================================
+   7. NAV LABEL
+   ========================================================= */
+
+.tl-nav-label {
+  flex: 1;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: -0.05px;
+}
+
+.tl-nav-item.active .tl-nav-label {
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   8. ACTIVE INDICATOR
+   ========================================================= */
+
+.tl-nav-active-indicator {
+  position: absolute;
+
+  top: 50%;
+  right: 0;
+
+  width: 3px;
+  height: 23px;
+
+  transform:
+    translateY(-50%);
+
+  border-radius:
+    4px 0 0 4px;
+
+  background: #1683ff;
+
+  box-shadow:
+    0 0 10px rgba(22, 131, 255, 0.55);
+}
+
+
+/* =========================================================
+   9. TOOLS
+   ========================================================= */
+
+.tl-nav-tools {
+  margin-top: 6px;
+}
+
+.tl-nav-tools .tl-nav-item {
+  margin-bottom: 3px;
+}
+
+
+/* =========================================================
+   10. SIDEBAR BOTTOM
+   ========================================================= */
+
+.tl-sidebar-bottom {
+  padding: 0 13px 17px;
+}
+
+.tl-sidebar-divider {
+  height: 1px;
+
+  margin:
+    0 7px 14px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+}
+
+.tl-sidebar-bottom-item {
+  width: 100%;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 14px;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color:
+    rgba(255, 255, 255, 0.52);
+
+  font-size: 12px;
+
+  text-decoration: none;
+
+  transition:
+    background var(--tl-transition),
+    color var(--tl-transition);
+}
+
+.tl-sidebar-bottom-item:hover {
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+}
+
+.tl-bottom-icon {
+  width: 22px;
+
+  text-align: center;
+
+  font-size: 15px;
+}
+
+.tl-logout-button {
+  cursor: pointer;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   11. SIDEBAR USER
+   ========================================================= */
+
+.tl-sidebar-user {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 12px;
+  padding: 11px;
+
+  border-radius: 10px;
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tl-sidebar-avatar {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1683ff,
+      #16a3e8
+    );
+
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.tl-sidebar-user-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1px;
+}
+
+.tl-sidebar-user-info strong {
+  overflow: hidden;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+.tl-sidebar-user-info span {
+  color:
+    rgba(255, 255, 255, 0.40);
+
+  font-size: 9px;
+}
+
+.tl-user-status {
+  width: 7px;
+  height: 7px;
+
+  margin-left: auto;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 0 3px rgba(34, 197, 94, 0.10);
+}
+
+
+/* =========================================================
+   12. TOPBAR
+   ========================================================= */
+
+.tl-topbar {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+
+  left: var(--tl-sidebar-width);
+
+  height: var(--tl-topbar-height);
+
+  display: flex;
+  align-items: center;
+
+  padding:
+    0 28px;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  border-bottom:
+    1px solid var(--tl-border);
+
+  backdrop-filter:
+    blur(14px);
+
+  -webkit-backdrop-filter:
+    blur(14px);
+
+  z-index: var(--tl-z-sticky);
+}
+
+
+/* =========================================================
+   13. MARKET TICKER
+   ========================================================= */
+
+.tl-market-ticker {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+
+  gap: 18px;
+}
+
+.tl-index-card {
+  display: grid;
+
+  grid-template-columns:
+    auto auto auto;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+.tl-index-name {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: var(--tl-text);
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.tl-market-live-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--tl-profit);
+
+  box-shadow:
+    0 0 0 3px rgba(22, 166, 106, 0.10);
+}
+
+.tl-index-value {
+  color: var(--tl-text-secondary);
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+.tl-index-change {
+  font-size: 10px;
+
+  font-weight: 600;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+.tl-index-positive {
+  color: var(--tl-profit);
+}
+
+.tl-index-negative {
+  color: var(--tl-loss);
+}
+
+.tl-ticker-divider {
+  width: 1px;
+  height: 24px;
+
+  background: var(--tl-border);
+}
+
+
+/* =========================================================
+   14. TOPBAR ACTIONS
+   ========================================================= */
+
+.tl-topbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-left: auto;
+}
+
+.tl-market-status {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding:
+    7px 10px;
+
+  border-radius: 999px;
+
+  background:
+    var(--tl-profit-soft);
+
+  color:
+    var(--tl-profit-dark);
+}
+
+.tl-market-status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background:
+    var(--tl-profit);
+
+  box-shadow:
+    0 0 0 3px rgba(22, 166, 106, 0.08);
+}
+
+.tl-market-status-text {
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   15. NOTIFICATION
+   ========================================================= */
+
+.tl-topbar-icon-button {
+  position: relative;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: var(--tl-text-secondary);
+
+  transition:
+    background var(--tl-transition),
+    color var(--tl-transition);
+}
+
+.tl-topbar-icon-button:hover {
+  background:
+    var(--tl-primary-soft);
+
+  color:
+    var(--tl-primary);
+}
+
+.tl-notification-icon {
+  font-size: 20px;
+
+  transform:
+    rotate(45deg);
+}
+
+.tl-notification-badge {
+  position: absolute;
+
+  top: 3px;
+  right: 2px;
+
+  min-width: 15px;
+  height: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 3px;
+
+  border-radius: 999px;
+
+  background:
+    var(--tl-loss);
+
+  color: #ffffff;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  border:
+    2px solid #ffffff;
+}
+
+
+/* =========================================================
+   16. TOPBAR DIVIDER
+   ========================================================= */
+
+.tl-topbar-divider {
+  width: 1px;
+  height: 30px;
+
+  background:
+    var(--tl-border);
+
+  margin:
+    0 2px;
+}
+
+
+/* =========================================================
+   17. USER MENU
+   ========================================================= */
+
+.tl-user-menu {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 5px 7px;
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: var(--tl-text);
+
+  transition:
+    background var(--tl-transition);
+}
+
+.tl-user-menu:hover {
+  background:
+    var(--tl-bg);
+}
+
+.tl-user-avatar {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1261d6,
+      #16a3e8
+    );
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 4px 10px rgba(18, 97, 214, 0.16);
+}
+
+.tl-user-details {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 1px;
+}
+
+.tl-user-details strong {
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: var(--tl-text);
+}
+
+.tl-user-details span {
+  font-size: 9px;
+
+  color: var(--tl-text-muted);
+}
+
+.tl-user-arrow {
+  margin-left: 2px;
+
+  color: var(--tl-text-muted);
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   18. MOBILE BRAND
+   ========================================================= */
+
+.tl-mobile-brand {
+  display: none;
+}
+
+.tl-mobile-brand-link {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--tl-navy);
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+.tl-brand-mark-small {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 8px;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   19. EXISTING DASHBOARD CONTENT OFFSET
+   ========================================================= */
+
+/*
+   The existing dashboard components need to stay below
+   the fixed TradeLogix topbar and beside the sidebar.
+*/
+
+.dashboard-content {
+  margin-left: var(--tl-sidebar-width);
+
+  padding-top: var(--tl-topbar-height);
+
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   20. COMMON DASHBOARD CONTENT AREA
+   ========================================================= */
+
+.content {
+  min-height: calc(100vh - var(--tl-topbar-height));
+
+  padding: 28px;
+
+  background: var(--tl-bg);
+}
+
+
+/* =========================================================
+   21. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  :root {
+    --tl-sidebar-width: 220px;
+  }
+
+  .tl-topbar {
+    padding: 0 20px;
+  }
+
+  .tl-user-details {
+    display: none;
+  }
+
+  .tl-market-status-text {
+    display: none;
+  }
+
+  .tl-market-status {
+    padding: 7px;
+  }
+
+  .tl-index-card {
+    gap: 6px;
+  }
+}
+
+
+/* =========================================================
+   22. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  :root {
+    --tl-sidebar-width: 0px;
+  }
+
+  .tl-sidebar {
+    transform: translateX(-100%);
+
+    transition:
+      transform var(--tl-transition-slow);
+  }
+
+  .tl-topbar {
+    left: 0;
+
+    padding: 0 14px;
+  }
+
+  .tl-mobile-brand {
+    display: block;
+  }
+
+  .tl-market-ticker {
+    display: none;
+  }
+
+  .tl-topbar-actions {
+    gap: 7px;
+  }
+
+  .tl-market-status {
+    display: none;
+  }
+
+  .tl-topbar-divider {
+    height: 25px;
+  }
+
+  .tl-user-details,
+  .tl-user-arrow {
+    display: none;
+  }
+
+  .dashboard-content {
+    margin-left: 0;
+  }
+
+  .content {
+    padding: 20px 14px;
+  }
+}
+
+
+/* =========================================================
+   23. RESPONSIVE - SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .tl-topbar {
+    height: 58px;
+  }
+
+  .tl-mobile-brand-link {
+    font-size: 14px;
+  }
+
+  .tl-brand-mark-small {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tl-topbar-icon-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .tl-user-avatar {
+    width: 31px;
+    height: 31px;
+  }
+
+  .dashboard-content {
+    padding-top: 58px;
+  }
+
+  .content {
+    padding:
+      16px 12px;
+  }
+}
+
+/* =========================================================
+   PHASE 2.5
+   DASHBOARD APPLICATION GRID
+   ========================================================= */
+
+.dashboard-content {
+  margin-left: var(--tl-sidebar-width);
+
+  padding-top: var(--tl-topbar-height);
+
+  min-height: 100vh;
+
+  display: flex;
+
+  background: var(--tl-bg);
+}
+
+
+/* =========================================================
+   MARKET WATCH PANEL
+   ========================================================= */
+
+.tl-watchlist-panel {
+  width: 300px;
+
+  min-width: 300px;
+
+  height: calc(100vh - var(--tl-topbar-height));
+
+  position: sticky;
+
+  top: var(--tl-topbar-height);
+
+  overflow-y: auto;
+
+  background: var(--tl-surface);
+
+  border-right: 1px solid var(--tl-border);
+
+  z-index: var(--tl-z-base);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.tl-main-content {
+  flex: 1;
+
+  min-width: 0;
+
+  min-height: calc(100vh - var(--tl-topbar-height));
+
+  padding: 28px;
+
+  background: var(--tl-bg);
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   WATCHLIST SCROLLBAR
+   ========================================================= */
+
+.tl-watchlist-panel::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tl-watchlist-panel::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   DASHBOARD RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .tl-watchlist-panel {
+    width: 270px;
+
+    min-width: 270px;
+  }
+
+  .tl-main-content {
+    padding: 22px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .dashboard-content {
+    margin-left: 0;
+
+    display: block;
+
+    padding-top: var(--tl-topbar-height);
+  }
+
+  .tl-watchlist-panel {
+    position: relative;
+
+    top: auto;
+
+    width: 100%;
+
+    min-width: 0;
+
+    height: auto;
+
+    max-height: 360px;
+
+    border-right: 0;
+
+    border-bottom: 1px solid var(--tl-border);
+  }
+
+  .tl-main-content {
+    width: 100%;
+
+    padding: 18px 14px;
+  }
+}

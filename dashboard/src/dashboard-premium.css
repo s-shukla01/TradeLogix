@@ -1,0 +1,903 @@
+/* =========================================================
+   TRADELOGIX PREMIUM DASHBOARD
+   FINAL VISUAL OVERRIDE
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL DASHBOARD
+   ========================================================= */
+
+.dashboard-container {
+  min-height: 100vh !important;
+  width: 100% !important;
+
+  background: #f4f7fb !important;
+
+  color: #172033 !important;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif !important;
+}
+
+
+/* =========================================================
+   MAIN APPLICATION AREA
+   ========================================================= */
+
+.dashboard-content {
+  margin-left: 248px !important;
+
+  padding-top: 68px !important;
+
+  min-height: 100vh !important;
+
+  display: flex !important;
+
+  background: #f4f7fb !important;
+}
+
+
+/* =========================================================
+   MARKET WATCH
+   ========================================================= */
+
+.tl-watchlist-panel {
+  width: 310px !important;
+
+  min-width: 310px !important;
+
+  height: calc(100vh - 68px) !important;
+
+  position: sticky !important;
+
+  top: 68px !important;
+
+  overflow-y: auto !important;
+
+  background: #ffffff !important;
+
+  border-right: 1px solid #e7ebf2 !important;
+
+  box-shadow:
+    4px 0 18px rgba(15, 23, 42, 0.035) !important;
+
+  z-index: 10 !important;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.tl-main-content {
+  flex: 1 !important;
+
+  min-width: 0 !important;
+
+  min-height: calc(100vh - 68px) !important;
+
+  padding: 30px !important;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(18, 97, 214, 0.035),
+      transparent 30%
+    ),
+    #f4f7fb !important;
+
+  overflow-x: hidden !important;
+}
+
+
+/* =========================================================
+   PAGE CONTAINER
+   ========================================================= */
+
+.tl-main-content > * {
+  width: 100%;
+}
+
+
+/* =========================================================
+   PREMIUM PAGE HEADER
+   ========================================================= */
+
+.tl-main-content::before {
+  content: "";
+  display: block;
+
+  width: 100%;
+  height: 4px;
+
+  margin-bottom: 20px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #1261d6,
+      #1683ff,
+      #16a3e8
+    );
+
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   FUNDS PAGE
+   ========================================================= */
+
+.tl-main-content .funds {
+  width: 100% !important;
+
+  max-width: 1250px !important;
+
+  margin: 0 auto !important;
+
+  padding: 0 !important;
+
+  color: #172033 !important;
+}
+
+
+/* =========================================================
+   FUNDS TITLE
+   ========================================================= */
+
+.tl-main-content .funds > p:first-child {
+  margin: 0 0 6px !important;
+
+  color: #172033 !important;
+
+  font-size: 24px !important;
+
+  font-weight: 700 !important;
+
+  letter-spacing: -0.5px !important;
+}
+
+
+/* =========================================================
+   FUNDS ROW
+   ========================================================= */
+
+.tl-main-content .funds .row {
+  width: 100% !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr)) !important;
+
+  gap: 20px !important;
+
+  margin: 20px 0 !important;
+}
+
+
+/* =========================================================
+   FUNDS COLUMNS
+   ========================================================= */
+
+.tl-main-content .funds .row .col {
+  width: 100% !important;
+
+  min-width: 0 !important;
+
+  padding: 24px !important;
+
+  background: #ffffff !important;
+
+  border:
+    1px solid #e7ebf2 !important;
+
+  border-radius: 16px !important;
+
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.045) !important;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease !important;
+}
+
+
+.tl-main-content .funds .row .col:hover {
+  transform: translateY(-2px) !important;
+
+  border-color:
+    rgba(18, 97, 214, 0.18) !important;
+
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+
+/* =========================================================
+   FUND LABELS
+   ========================================================= */
+
+.tl-main-content .funds .row .col span {
+  display: block !important;
+
+  margin-bottom: 6px !important;
+
+  color: #718096 !important;
+
+  font-size: 12px !important;
+
+  font-weight: 500 !important;
+
+  line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   FUND VALUES
+   ========================================================= */
+
+.tl-main-content .funds .row .col p {
+  margin: 0 0 18px !important;
+
+  color: #172033 !important;
+
+  font-size: 22px !important;
+
+  font-weight: 600 !important;
+
+  line-height: 1.2 !important;
+
+  font-variant-numeric: tabular-nums !important;
+}
+
+
+/* =========================================================
+   FUND CARD SECTIONS
+   ========================================================= */
+
+.tl-main-content .funds .row .col hr {
+  margin: 18px 0 !important;
+
+  border: 0 !important;
+
+  border-top:
+    1px solid #edf1f6 !important;
+}
+
+
+/* =========================================================
+   COMMODITY CARD
+   ========================================================= */
+
+.tl-main-content .commodity {
+  min-height: 260px !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  padding: 32px !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f8fbff
+    ) !important;
+
+  border:
+    1px solid #e3eaf4 !important;
+
+  border-radius: 18px !important;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.05) !important;
+
+  text-align: center !important;
+}
+
+
+.tl-main-content .commodity p {
+  max-width: 280px !important;
+
+  margin: 0 0 18px !important;
+
+  color: #667085 !important;
+
+  font-size: 14px !important;
+
+  line-height: 1.6 !important;
+}
+
+
+/* =========================================================
+   BLUE BUTTON
+   ========================================================= */
+
+.tl-main-content .btn-blue {
+  display: inline-flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  min-height: 42px !important;
+
+  padding:
+    0 22px !important;
+
+  border: 0 !important;
+
+  border-radius: 9px !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1261d6,
+      #1683ff
+    ) !important;
+
+  color: #ffffff !important;
+
+  font-size: 13px !important;
+
+  font-weight: 600 !important;
+
+  box-shadow:
+    0 6px 16px rgba(18, 97, 214, 0.20) !important;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+
+.tl-main-content .btn-blue:hover {
+  transform: translateY(-1px) !important;
+
+  box-shadow:
+    0 9px 22px rgba(18, 97, 214, 0.28) !important;
+}
+
+
+/* =========================================================
+   WATCHLIST HEADER
+   ========================================================= */
+
+.tl-watchlist-panel input {
+  font-family: inherit !important;
+}
+
+
+/* =========================================================
+   WATCHLIST ROW POLISH
+   ========================================================= */
+
+.tl-watchlist-panel > div {
+  font-family: inherit;
+}
+
+
+/* Existing common Zerodha watchlist selectors */
+
+.tl-watchlist-panel .search {
+  padding: 18px !important;
+
+  background: #ffffff !important;
+
+  border-bottom:
+    1px solid #edf1f6 !important;
+}
+
+
+.tl-watchlist-panel input {
+  height: 42px !important;
+
+  border:
+    1px solid #e3e8ef !important;
+
+  border-radius: 9px !important;
+
+  background: #f8fafc !important;
+
+  padding:
+    0 13px !important;
+
+  color: #172033 !important;
+
+  outline: none !important;
+}
+
+
+.tl-watchlist-panel input:focus {
+  border-color: #1261d6 !important;
+
+  background: #ffffff !important;
+
+  box-shadow:
+    0 0 0 3px rgba(18, 97, 214, 0.08) !important;
+}
+
+
+/* =========================================================
+   MARKET WATCH LIST ITEMS
+   ========================================================= */
+
+.tl-watchlist-panel .list {
+  background: #ffffff !important;
+}
+
+
+.tl-watchlist-panel .list li {
+  min-height: 58px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  padding:
+    0 18px !important;
+
+  border-bottom:
+    1px solid #f0f2f5 !important;
+
+  transition:
+    background 0.18s ease !important;
+}
+
+
+.tl-watchlist-panel .list li:hover {
+  background:
+    #f7faff !important;
+}
+
+
+/* =========================================================
+   MARKET NAMES
+   ========================================================= */
+
+.tl-watchlist-panel .list li .item {
+  color: #344054 !important;
+
+  font-size: 12px !important;
+
+  font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   MARKET NUMBERS
+   ========================================================= */
+
+.tl-watchlist-panel .list li .price {
+  font-size: 12px !important;
+
+  font-weight: 600 !important;
+
+  font-variant-numeric:
+    tabular-nums !important;
+}
+
+
+/* =========================================================
+   DASHBOARD GENERIC CARD
+   ========================================================= */
+
+.tl-card,
+.dashboard-card {
+  background: #ffffff !important;
+
+  border:
+    1px solid #e7ebf2 !important;
+
+  border-radius: 16px !important;
+
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.045) !important;
+}
+
+
+/* =========================================================
+   GENERIC ROW FIX
+   ========================================================= */
+
+/*
+   Old Zerodha CSS uses .row heavily.
+   We deliberately scope this to the main dashboard.
+*/
+
+.tl-main-content > .row {
+  width: 100% !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr)) !important;
+
+  gap: 20px !important;
+
+  margin: 0 !important;
+}
+
+
+/* =========================================================
+   DASHBOARD HEADINGS
+   ========================================================= */
+
+.tl-main-content h1,
+.tl-main-content h2,
+.tl-main-content h3 {
+  color: #172033 !important;
+
+  font-weight: 650 !important;
+}
+
+
+/* =========================================================
+   MONEY NUMBERS
+   ========================================================= */
+
+.tl-main-content .profit {
+  color: #16a66a !important;
+}
+
+.tl-main-content .loss {
+  color: #e5484d !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.tl-watchlist-panel::-webkit-scrollbar,
+.tl-main-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tl-watchlist-panel::-webkit-scrollbar-thumb,
+.tl-main-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 999px;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .dashboard-content {
+    margin-left: 220px !important;
+  }
+
+  .tl-watchlist-panel {
+    width: 270px !important;
+
+    min-width: 270px !important;
+  }
+
+  .tl-main-content {
+    padding: 22px !important;
+  }
+
+  .tl-main-content .funds .row {
+    grid-template-columns:
+      1fr !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .dashboard-content {
+    margin-left: 0 !important;
+
+    display: block !important;
+
+    padding-top: 60px !important;
+  }
+
+  .tl-watchlist-panel {
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    height: auto !important;
+
+    max-height: 400px !important;
+
+    position: relative !important;
+
+    top: auto !important;
+
+    border-right: 0 !important;
+
+    border-bottom:
+      1px solid #e7ebf2 !important;
+  }
+
+  .tl-main-content {
+    padding: 18px 14px !important;
+  }
+
+  .tl-main-content .funds .row {
+    grid-template-columns:
+      1fr !important;
+
+    gap: 14px !important;
+  }
+
+  .tl-main-content .funds .row .col {
+    padding: 20px !important;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .tl-main-content {
+    padding: 14px 10px !important;
+  }
+
+  .tl-main-content .funds .row .col {
+    padding: 17px !important;
+
+    border-radius: 13px !important;
+  }
+
+  .tl-main-content .funds > p:first-child {
+    font-size: 20px !important;
+  }
+}
+
+/* =========================================================
+   TRADELOGIX — TOPBAR OVERLAP FIX
+   ========================================================= */
+
+:root {
+  --tl-topbar-height: 68px;
+}
+
+
+/* ---------------------------------------------------------
+   TOPBAR
+   --------------------------------------------------------- */
+
+.tl-topbar {
+  position: fixed !important;
+
+  top: 0 !important;
+  left: 248px !important;
+  right: 0 !important;
+
+  height: var(--tl-topbar-height) !important;
+
+  z-index: 9999 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ---------------------------------------------------------
+   DASHBOARD CONTENT
+   --------------------------------------------------------- */
+
+.dashboard-content {
+  margin-left: 248px !important;
+
+  margin-top: var(--tl-topbar-height) !important;
+
+  padding-top: 0 !important;
+
+  min-height:
+    calc(100vh - var(--tl-topbar-height)) !important;
+
+  display: flex !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ---------------------------------------------------------
+   WATCHLIST
+   --------------------------------------------------------- */
+
+.tl-watchlist-panel {
+  position: sticky !important;
+
+  top: 0 !important;
+
+  height:
+    calc(100vh - var(--tl-topbar-height)) !important;
+
+  max-height:
+    calc(100vh - var(--tl-topbar-height)) !important;
+
+  overflow-y: auto !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN CONTENT
+   --------------------------------------------------------- */
+
+.tl-main-content {
+  min-height:
+    calc(100vh - var(--tl-topbar-height)) !important;
+
+  padding: 28px 30px 40px !important;
+
+  box-sizing: border-box !important;
+
+  overflow-x: hidden !important;
+}
+
+
+/* ---------------------------------------------------------
+   SUMMARY PAGE
+   --------------------------------------------------------- */
+
+.summary-page {
+  position: relative !important;
+
+  width: 100% !important;
+
+  max-width: 1440px !important;
+
+  margin: 0 auto !important;
+
+  padding-top: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   SUMMARY HEADER
+   --------------------------------------------------------- */
+
+.summary-header {
+  position: relative !important;
+
+  z-index: 1 !important;
+
+  margin-top: 0 !important;
+
+  padding-top: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   SUMMARY CARDS
+   --------------------------------------------------------- */
+
+.summary-cards {
+  position: relative !important;
+
+  z-index: 1 !important;
+}
+
+
+/* ---------------------------------------------------------
+   PREVENT ANY OLD TOP SPACING
+   --------------------------------------------------------- */
+
+.tl-main-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   DESKTOP
+   --------------------------------------------------------- */
+
+@media (min-width: 801px) {
+
+  .dashboard-content {
+    margin-left: 248px !important;
+
+    margin-top: 68px !important;
+
+    padding-top: 0 !important;
+  }
+
+  .tl-topbar {
+    left: 248px !important;
+
+    height: 68px !important;
+  }
+
+  .tl-watchlist-panel {
+    top: 0 !important;
+
+    height: calc(100vh - 68px) !important;
+  }
+
+  .tl-main-content {
+    padding-top: 28px !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+
+  .tl-topbar {
+    left: 220px !important;
+  }
+
+  .dashboard-content {
+    margin-left: 220px !important;
+
+    margin-top: 68px !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  .tl-topbar {
+    left: 0 !important;
+
+    width: 100% !important;
+
+    height: 60px !important;
+  }
+
+  .dashboard-content {
+    margin-left: 0 !important;
+
+    margin-top: 60px !important;
+
+    padding-top: 0 !important;
+
+    display: block !important;
+  }
+
+  .tl-watchlist-panel {
+    position: relative !important;
+
+    top: 0 !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+
+    max-height: 400px !important;
+  }
+
+  .tl-main-content {
+    padding:
+      20px 14px 30px !important;
+  }
+}

@@ -1,12 +1,63 @@
+
 const { Schema } = require("mongoose");
 
-const HoldingsSchema = new Schema({
-  name: String,
-  qty: Number,
-  avg: Number,
-  price: Number,
-  net: String,
-  day: String,
-});
+const HoldingsSchema = new Schema(
+  {
+    // ========================================
+    // User
+    // ========================================
+
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "user",
+      required: true,
+      index: true,
+    },
+
+    // ========================================
+    // Stock Details
+    // ========================================
+
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+      uppercase: true,
+    },
+
+    qty: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+
+    avg: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+
+    price: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+
+    net: {
+      type: String,
+      required: true,
+    },
+
+    day: {
+      type: String,
+      required: true,
+    },
+  },
+
+  {
+    timestamps: true,
+  }
+);
 
 module.exports = { HoldingsSchema };
+

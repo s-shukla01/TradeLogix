@@ -1,0 +1,904 @@
+/* =========================================================
+   TRADELOGIX — FUNDS
+   ========================================================= */
+
+.funds-page {
+  width: 100%;
+  min-height: 100%;
+
+  padding: 30px 34px 50px;
+
+  box-sizing: border-box;
+
+  background: #f5f7fb;
+
+  color: #172033;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.funds-page-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+.funds-eyebrow {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #7e8b9e;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.funds-page-header h1 {
+  margin: 0;
+
+  color: #14213d;
+
+  font-size: 27px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+.funds-page-header p {
+  margin: 7px 0 0;
+
+  color: #8994a4;
+
+  font-size: 12px;
+}
+
+.funds-market-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 9px 14px;
+
+  border: 1px solid #dcefe7;
+
+  border-radius: 30px;
+
+  background: #effaf5;
+
+  color: #14905b;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.funds-status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #16b978;
+
+  box-shadow:
+    0 0 0 4px rgba(22, 185, 120, 0.12);
+}
+
+
+/* =========================================================
+   ACTION CARD
+   ========================================================= */
+
+.funds-action-card {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  padding: 19px 21px;
+
+  margin-bottom: 17px;
+
+  border: 1px solid #dce7f6;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      110deg,
+      #f8fbff,
+      #ffffff
+    );
+
+  box-shadow:
+    0 4px 16px rgba(28, 45, 75, 0.04);
+}
+
+.funds-action-content {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+.funds-action-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: #eaf2ff;
+
+  color: #2878e8;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.funds-action-content h3 {
+  margin: 0 0 4px;
+
+  color: #29374e;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.funds-action-content p {
+  margin: 0;
+
+  color: #8994a4;
+
+  font-size: 10px;
+}
+
+.funds-action-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.funds-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 9px 15px;
+
+  border-radius: 7px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.funds-btn-primary {
+  background: #2878e8;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 4px 11px rgba(40, 120, 232, 0.18);
+}
+
+.funds-btn-primary:hover {
+  background: #1767d6;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 15px rgba(40, 120, 232, 0.25);
+}
+
+.funds-btn-secondary {
+  background: #edf1f5;
+
+  color: #657286;
+}
+
+.funds-btn-secondary:hover {
+  background: #dfe5eb;
+
+  color: #465365;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   BALANCE GRID
+   ========================================================= */
+
+.funds-balance-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 15px;
+
+  margin-bottom: 17px;
+}
+
+.funds-balance-card {
+  min-width: 0;
+
+  padding: 17px 18px;
+
+  border: 1px solid #e2e7ee;
+
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 15px rgba(28, 45, 75, 0.035);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.funds-balance-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 20px rgba(28, 45, 75, 0.065);
+}
+
+.funds-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+}
+
+.funds-card-top > span {
+  color: #7f8b9c;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.funds-card-icon {
+  width: 29px;
+  height: 29px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.funds-card-icon.blue {
+  background: #eaf2ff;
+  color: #2878e8;
+}
+
+.funds-card-icon.orange {
+  background: #fff4e8;
+  color: #e88925;
+}
+
+.funds-card-icon.green {
+  background: #e9f8f1;
+  color: #14905b;
+}
+
+.funds-balance-card h2 {
+  margin: 0 0 6px;
+
+  color: #26354c;
+
+  font-size: 20px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+.funds-balance-card p {
+  margin: 0;
+
+  color: #98a2b1;
+
+  font-size: 9px;
+}
+
+.funds-balance-card p.funds-positive {
+  color: #14905b;
+}
+
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.funds-main-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.55fr)
+    minmax(290px, 0.8fr);
+
+  gap: 17px;
+
+  margin-bottom: 17px;
+}
+
+
+/* =========================================================
+   COMMON CARDS
+   ========================================================= */
+
+.funds-details-card,
+.funds-utilization-card {
+  border: 1px solid #e2e7ee;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 15px rgba(28, 45, 75, 0.035);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.funds-section-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.funds-section-header > div:first-child > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #8b96a5;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.funds-section-header h2 {
+  margin: 0;
+
+  color: #29374e;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+.funds-section-badge {
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  background: #eaf2ff;
+
+  color: #2878e8;
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DATA ROWS
+   ========================================================= */
+
+.funds-data-section {
+  padding: 10px 20px 14px;
+}
+
+.funds-data-row {
+  min-height: 31px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.funds-data-row span {
+  color: #7f8b9c;
+
+  font-size: 10px;
+}
+
+.funds-data-row strong {
+  color: #4b586b;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.funds-data-row.highlight {
+  padding: 4px 9px;
+
+  margin-bottom: 3px;
+
+  border-radius: 6px;
+
+  background: #f5f9ff;
+}
+
+.funds-data-row .funds-colored {
+  color: #2878e8;
+
+  font-weight: 700;
+}
+
+.funds-divider {
+  height: 1px;
+
+  margin: 7px 0;
+
+  background: #edf0f4;
+}
+
+.funds-data-row.total {
+  margin-top: 3px;
+
+  padding-top: 10px;
+
+  border-top: 1px solid #edf0f4;
+}
+
+.funds-data-row.total span {
+  color: #4e5b6e;
+
+  font-weight: 700;
+}
+
+.funds-data-row.total strong {
+  color: #26354c;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   UTILIZATION
+   ========================================================= */
+
+.funds-utilization-card {
+  padding-bottom: 18px;
+}
+
+.funds-utilization {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 28px;
+
+  padding: 25px 20px 20px;
+}
+
+
+/* =========================================================
+   UTILIZATION CIRCLE
+   ========================================================= */
+
+.funds-utilization-circle {
+  width: 135px;
+  height: 135px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      #2878e8 0deg 173deg,
+      #e9eef4 173deg 360deg
+    );
+
+  position: relative;
+}
+
+.funds-utilization-circle::after {
+  content: "";
+
+  position: absolute;
+
+  width: 101px;
+  height: 101px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+}
+
+.funds-utilization-circle > div {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.funds-utilization-circle strong {
+  color: #26354c;
+
+  font-size: 22px;
+
+  line-height: 1.1;
+}
+
+.funds-utilization-circle span {
+  margin-top: 3px;
+
+  color: #929dac;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   LEGEND
+   ========================================================= */
+
+.funds-utilization-legend {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 17px;
+}
+
+.funds-utilization-legend > div {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+}
+
+.legend-dot {
+  width: 7px;
+  height: 7px;
+
+  margin-top: 3px;
+
+  border-radius: 50%;
+}
+
+.legend-dot.used {
+  background: #2878e8;
+}
+
+.legend-dot.available {
+  background: #d9e1ea;
+}
+
+.funds-utilization-legend > div > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.funds-utilization-legend strong {
+  color: #465469;
+
+  font-size: 9px;
+}
+
+.funds-utilization-legend small {
+  color: #99a3b1;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   UTILIZATION NOTE
+   ========================================================= */
+
+.funds-utilization-note {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 7px;
+
+  margin: 0 20px;
+
+  padding: 10px 11px;
+
+  border-radius: 7px;
+
+  background: #f7f9fb;
+
+  color: #8994a4;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+.funds-utilization-note span {
+  color: #2878e8;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   COMMODITY
+   ========================================================= */
+
+.funds-commodity-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 17px 19px;
+
+  border: 1px solid #e2e7ee;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 15px rgba(28, 45, 75, 0.035);
+}
+
+.funds-commodity-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: #f2f4f7;
+
+  color: #6e7b8d;
+
+  font-size: 16px;
+}
+
+.funds-commodity-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.funds-commodity-content > span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #9aa3b0;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.funds-commodity-content h3 {
+  margin: 0 0 4px;
+
+  color: #354257;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.funds-commodity-content p {
+  margin: 0;
+
+  color: #929dac;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .funds-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .funds-balance-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .funds-page {
+    padding: 23px 18px 40px;
+  }
+
+  .funds-page-header {
+    flex-direction: column;
+  }
+
+  .funds-market-status {
+    align-self: flex-start;
+  }
+
+  .funds-action-card {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .funds-action-buttons {
+    width: 100%;
+  }
+
+  .funds-action-buttons .funds-btn {
+    flex: 1;
+  }
+
+  .funds-utilization {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .funds-utilization-legend {
+    width: 100%;
+
+    flex-direction: row;
+
+    justify-content: center;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .funds-page-header h1 {
+    font-size: 23px;
+  }
+
+  .funds-action-content {
+    align-items: flex-start;
+  }
+
+  .funds-section-header {
+    padding: 16px;
+  }
+
+  .funds-data-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .funds-commodity-card {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+  }
+
+  .funds-commodity-content {
+    width: calc(100% - 55px);
+  }
+
+  .funds-commodity-card .funds-btn {
+    width: 100%;
+  }
+
+}

@@ -1,101 +1,184 @@
-import React, { useState } from "react";
-
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Menu = () => {
-  const [selectedMenu, setSelectedMenu] = useState(0);
-  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const location = useLocation();
 
-  const handleMenuClick = (index) => {
-    setSelectedMenu(index);
+  const menuItems = [
+    {
+      name: "Dashboard",
+      path: "/",
+      icon: "⌂",
+    },
+    {
+      name: "Orders",
+      path: "/orders",
+      icon: "▤",
+    },
+    {
+      name: "Holdings",
+      path: "/holdings",
+      icon: "◫",
+    },
+    {
+      name: "Positions",
+      path: "/positions",
+      icon: "↗",
+    },
+    {
+      name: "Funds",
+      path: "/funds",
+      icon: "₹",
+    },
+  ];
+
+  const isActive = (path) => {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+
+    return location.pathname.startsWith(path);
   };
-
-  const handleProfileClick = (index) => {
-    setIsProfileDropdownOpen(!isProfileDropdownOpen);
-  };
-
-  const menuClass = "menu";
-  const activeMenuClass = "menu selected";
 
   return (
-    <div className="menu-container">
-      <img src="logo.png" style={{ width: "50px" }} />
-      <div className="menus">
-        <ul>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/"
-              onClick={() => handleMenuClick(0)}
-            >
-              <p className={selectedMenu === 0 ? activeMenuClass : menuClass}>
-                Dashboard
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/orders"
-              onClick={() => handleMenuClick(1)}
-            >
-              <p className={selectedMenu === 1 ? activeMenuClass : menuClass}>
-                Orders
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/holdings"
-              onClick={() => handleMenuClick(2)}
-            >
-              <p className={selectedMenu === 2 ? activeMenuClass : menuClass}>
-                Holdings
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/positions"
-              onClick={() => handleMenuClick(3)}
-            >
-              <p className={selectedMenu === 3 ? activeMenuClass : menuClass}>
-                Positions
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="funds"
-              onClick={() => handleMenuClick(4)}
-            >
-              <p className={selectedMenu === 4 ? activeMenuClass : menuClass}>
-                Funds
-              </p>
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/apps"
-              onClick={() => handleMenuClick(6)}
-            >
-              <p className={selectedMenu === 6 ? activeMenuClass : menuClass}>
-                Apps
-              </p>
-            </Link>
-          </li>
-        </ul>
-        <hr />
-        <div className="profile" onClick={handleProfileClick}>
-          <div className="avatar">ZU</div>
-          <p className="username">USERID</p>
+    <aside className="tl-sidebar">
+      {/* Brand */}
+      <div className="tl-sidebar-brand">
+        <Link to="/" className="tl-brand-link">
+          <div className="tl-brand-mark">
+            TL
+          </div>
+
+          <div className="tl-brand-text">
+            <span className="tl-brand-name">TradeLogix</span>
+            <span className="tl-brand-tagline">
+              Trade Smart. Log Success.
+            </span>
+          </div>
+        </Link>
+      </div>
+
+      {/* Navigation */}
+      <nav className="tl-sidebar-nav">
+        <div className="tl-nav-section">
+          <span className="tl-nav-section-title">
+            MAIN MENU
+          </span>
+
+          <div className="tl-nav-list">
+            {menuItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`tl-nav-item ${
+                  isActive(item.path) ? "active" : ""
+                }`}
+              >
+                <span className="tl-nav-icon">
+                  {item.icon}
+                </span>
+
+                <span className="tl-nav-label">
+                  {item.name}
+                </span>
+
+                {isActive(item.path) && (
+                  <span className="tl-nav-active-indicator" />
+                )}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Tools */}
+        <div className="tl-nav-section tl-nav-tools">
+          <span className="tl-nav-section-title">
+            TOOLS
+          </span>
+
+          <Link
+            to="/"
+            className="tl-nav-item"
+          >
+            <span className="tl-nav-icon">
+              ◉
+            </span>
+
+            <span className="tl-nav-label">
+              Market Watch
+            </span>
+          </Link>
+
+          <Link
+            to="/apps"
+            className={`tl-nav-item ${
+              location.pathname === "/apps" ? "active" : ""
+            }`}
+          >
+            <span className="tl-nav-icon">
+              ▦
+            </span>
+
+            <span className="tl-nav-label">
+              Apps
+            </span>
+          </Link>
+        </div>
+      </nav>
+
+      {/* Bottom section */}
+      <div className="tl-sidebar-bottom">
+        <div className="tl-sidebar-divider" />
+
+        <Link
+          to="/"
+          className="tl-sidebar-bottom-item"
+        >
+          <span className="tl-bottom-icon">
+            ⚙
+          </span>
+
+          <span>
+            Settings
+          </span>
+        </Link>
+
+        <button
+          type="button"
+          className="tl-sidebar-bottom-item tl-logout-button"
+          onClick={() => {
+            console.log("TradeLogix logout clicked");
+          }}
+        >
+          <span className="tl-bottom-icon">
+            ↪
+          </span>
+
+          <span>
+            Logout
+          </span>
+        </button>
+
+        {/* User Mini Profile */}
+        <div className="tl-sidebar-user">
+          <div className="tl-sidebar-avatar">
+            DS
+          </div>
+
+          <div className="tl-sidebar-user-info">
+            <strong>
+              User Account
+            </strong>
+
+            <span>
+              Active account
+            </span>
+          </div>
+
+          <span className="tl-user-status" />
         </div>
       </div>
-    </div>
+    </aside>
   );
 };
 
