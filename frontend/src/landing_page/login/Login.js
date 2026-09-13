@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./login.css";
 
 const Login = () => {
-  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -24,8 +23,8 @@ const Login = () => {
 
     console.log("Login Data:", formData);
 
-    // Backend authentication yahan connect kar sakte ho
-    navigate("/dashboard");
+    // Redirect to deployed Dashboard
+    window.location.href = "https://tradelogix-2.onrender.com/";
   };
 
   return (
